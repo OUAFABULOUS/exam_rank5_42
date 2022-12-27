@@ -8,6 +8,9 @@
 # include "ASpell.hpp"
 # include "ATarget.hpp"
 
+class ASpell;
+class ATarget;
+
 class Warlock {
 	public:
 	Warlock(std::string const &name, std::string const &title);
@@ -16,9 +19,10 @@ class Warlock {
 	std::string	const &getTitle() const;
 	void		setTitle(std::string const &title);
 	void		introduce() const;
-	void		learnSpell(ASpell *aspell_ptr);
+
+	void		learnSpell(ASpell *spell);
 	void		forgetSpell(std::string spell_name);
-	void		launchSpell(std::string, ATarget const &target);
+	void		launchSpell(std::string spell_name, ATarget const &target);
 
 	private:
 	Warlock();
@@ -26,7 +30,7 @@ class Warlock {
 	Warlock const& operator=(Warlock const& rhs);
 	std::string	_name;
 	std::string	_title;
-	std::map<std::string, ASpell *> arr;
+	std::map<std::string, ASpell *> spell_arr;
 };
 
 #endif

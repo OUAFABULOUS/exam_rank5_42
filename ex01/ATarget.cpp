@@ -1,5 +1,5 @@
 #include "ATarget.hpp"
-
-void	ATarget::getHitBySpell(ASpell const &hitter) const {
-	std::cout << getType() << " has been " << hitter.getEffects() << std::endl;
+void    ATarget::getHitBySpell(ASpell const &spell) const {
+    std::cout << getType() <<  "has been " << spell.getEffects() << "!" << std::endl;
 }
+
